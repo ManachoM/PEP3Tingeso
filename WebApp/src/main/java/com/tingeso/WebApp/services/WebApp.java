@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin("*")
 public class WebApp {
+
     
     @GetMapping(value = "/hola")
     public String holaMundo(){
