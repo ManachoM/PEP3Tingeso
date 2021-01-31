@@ -21,7 +21,7 @@ pipeline{
         stage('Stationary Analysis'){
             steps{
                 sh "mvn spotbugs:spotbugs"
-                scanForIssues tool: spotBugs(pattern: '**/target/spotbugsXml.xml')
+                
             }
         }
         stage('Build Image'){
