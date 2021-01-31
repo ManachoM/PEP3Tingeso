@@ -7,13 +7,11 @@ spec:
   selector:
     matchLabels:
       app: hola-mundo
-      version: blue
   template:
     metadata:
       name: hola-mundo-pod
       labels:
-        app: hola-mundo-app
-        version: blue
+        app: hola-mundo
     spec:
       containers:
       - name: hola-mundo-container
@@ -31,9 +29,8 @@ metadata:
 spec:
   selector:
     app: hola-mundo-app
-    version: blue
   type: NodePort
   ports:
-  - nodePort: 31113
+  - nodePort: 31115
     port: 80
     targetPort: 80
