@@ -11,7 +11,7 @@ pipeline{
             git url: 'https://github.com/ManachoM/PEP3Tingeso.git', branch: 'master'
         }
         stage('Build and Unit Tests'){
-            mvn clean package
+            sh "mvn clean package"
         }
         stage('Stationary Analysis'){
             scanForIssues tool: spotBugs(pattern: '**/target/findbugsXml.xml')
