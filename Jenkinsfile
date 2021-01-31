@@ -1,11 +1,6 @@
 pipeline{
     
-    agent {
-        kubernetes{
-            cloud 'kubernetes'
-            defaultContainer 'jnlp-slave'
-        }
-    }
+    agent any
 
     tools{
         maven "M1"
