@@ -21,7 +21,7 @@ class WebAppApplicationTests {
 
 	@Test
 	public void greetingShouldReturnDefaultMessage() throws Exception {
-		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/hola",
+		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",
 				String.class)).contains("Hola Mundo");
 	}
 }
