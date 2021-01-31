@@ -27,6 +27,7 @@ pipeline{
         stage('Build Image'){
             steps{
                 sh "cd target"
+                sh "ls"
                 sh "java -Djarmode=layertools -jar WebApp-0.0.1-SNAPSHOT.jar list"
                 sh "java -Djarmode=layertools -jar WebApp-0.0.1-SNAPSHOT.jar extract"
                 sh "cd .."
