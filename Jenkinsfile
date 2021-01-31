@@ -26,7 +26,6 @@ pipeline{
         }
         stage('Build Image'){
             steps{
-                sh "service docker start"
                 script {
                     myapp = docker.build("manachom/pep3tingeso:${env.BUILD_ID}")
                 }
