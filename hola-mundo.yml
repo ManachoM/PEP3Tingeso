@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hola-mundo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hola-mundo
+      version: blue
+  template:
+    metadata:
+      name: hola-mundo-pod
+      labels:
+        app: hola-mundo-app
+        version: blue
+    spec:
+      containers:
+      - name: hola-mundo-container
+        image: manachom/pep3tingeso:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service 
+metadata:
+  name: hola-mundo-svc
+  labels:
+    app: hola-mundo-app
+spec:
+  selector:
+    app: hola-mundo-app
+    version: blue
+  type: NodePort
+  ports:
+  - nodePort: 31113
+    port: 80
+    targetPort: 80

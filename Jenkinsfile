@@ -31,7 +31,7 @@ pipeline{
                 }
             }
         }
-        stage("Push image") {
+        stage('Push image') {
             steps {
                 
                 script {
@@ -40,6 +40,13 @@ pipeline{
                             myapp.push("${env.BUILD_ID}")
                     }
                 }
+            }
+        }
+        stage('Deploy'){
+            steps{
+                script {
+                        kubernetesDeploy(configs: "hola-mundo.yml", kubeconfigId: "mykubeconfig")
+                    }
             }
         }
     }
