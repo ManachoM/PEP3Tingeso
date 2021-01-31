@@ -26,6 +26,7 @@ pipeline{
         }
         stage('Build Image'){
             steps{
+                sh "systemctl start docker"
                 script {
                     myapp = docker.build("manachom/pep3tingeso:${env.BUILD_ID}")
                 }
@@ -33,7 +34,7 @@ pipeline{
         }
         stage("Push image") {
             steps {
-                sh "systemctl start docker"
+                
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                             myapp.push("latest")
