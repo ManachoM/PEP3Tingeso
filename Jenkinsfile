@@ -2,6 +2,10 @@ pipeline{
     
     agent any
 
+    tools{
+        maven "M1"
+    }
+
     stages{
         stage('Checkout Source'){
             git url: 'https://github.com/ManachoM/PEP3Tingeso.git', branch: 'master'
