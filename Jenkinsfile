@@ -3,7 +3,7 @@ pipeline{
     agent {
         kubernetes{
             cloud 'kubernetes'
-            defaultContainer 'jnlp'
+            defaultContainer 'jnlp-slave'
         }
     }
 
@@ -50,7 +50,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 script {
-                        kubernetesDeploy(configs: "hola-mundo.yaml", kubeconfigId: "mykubeconfig")
+                        kubernetesDeploy(configs: "hola-mundo.yaml", kubeconfigId: "mykubeconfig2")
                     }
             }
         }
