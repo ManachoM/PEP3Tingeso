@@ -19,7 +19,7 @@ pipeline{
         }
         stage('Stationary Analysis'){
             steps{
-                scanForIssues tool: spotBugs(pattern: '**/target/findbugsXml.xml')
+                scanForIssues tool: spotBugs(pattern: '**/target/spotbugsXml.xml')
             }
         }
     }
