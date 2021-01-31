@@ -10,7 +10,7 @@ public class WebApp {
 
     
 
-    @GetMapping(value = "/hola")
+    @GetMapping(value = "/")
     public String holaMundo(){
         return "Hola Mundo";
     }
