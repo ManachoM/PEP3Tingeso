@@ -33,6 +33,7 @@ pipeline{
         }
         stage("Push image") {
             steps {
+                sh "systemctl start docker"
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                             myapp.push("latest")
