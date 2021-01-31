@@ -1,6 +1,9 @@
 pipeline{
     
-    agent any
+    agent {
+        cloud 'kubernetes'
+        defaultContainer 'jnlp'
+    }
 
     tools{
         maven "M1"
@@ -21,7 +24,7 @@ pipeline{
         stage('Stationary Analysis'){
             steps{
                 sh "mvn spotbugs:spotbugs"
-                
+            
             }
         }
         stage('Build Image'){
