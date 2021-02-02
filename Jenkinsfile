@@ -44,9 +44,8 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-                script {
-                        kubernetesDeploy(configs: "hola-mundo-2.yml", kubeconfigId: "kubeconfig")
-                    }
+                
+                sh "kubectl apply -f hola-mundo-2.yml"
             }
         }
     }
