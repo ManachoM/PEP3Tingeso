@@ -45,7 +45,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 sh "kubectl apply -f hola-mundo-2.yml"
-                echo "Hola mundo! Ya me desplegué"
+                echo "Hola! Fui desplegado automáticamente"
             }
         }
     }
